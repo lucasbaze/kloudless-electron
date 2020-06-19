@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Kloudless File Picker</title>
+  <script src="https://static-cdn.kloudless.com/p/platform/sdk/kloudless.explorer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>The Kloudless File Picker JS library</h1>
+  <hr />
+
+  <p>
+    Documentation can be found on
+    <a href="https://github.com/kloudless/file-picker" target="_blank"> GitHub</a>.
+  </p>
+  <p>
+    For a version without jQuery, and with all options and event handlers, see
+    <a href="https://output.jsbin.com/kuzafa/" target="_blank">here</a>.
+  </p>
+
+  <p>
+    Click the Edit button in the top right corner to view the source and try it out
+    for yourself.
+  </p>
+
+  <h2>Example</h2>
+  <p>Click a button below to launch the Chooser or Saver.</p>
+
+  <button id="chooser">Choose a file</button>
+  <button id="saver">Save a file</button>
+
+  <h3>File information</h3>
+  <div id="file-info">
+    <pre>Result will appear here</pre>
+  </div>
+
+  <script>
+    // Will not work because of file:// protocol check.
+    // window.Kloudless.filePicker.setGlobalOptions({
+    //   pickerUrl:
+    //     'file:///Users/lucasbazemore/Documents/Demoflow/Apps/demoflow_client/static/kloudless/picker/index.html'
+    // });
+    var picker = window.Kloudless.filePicker.picker({
+      app_id: 'I_INSERTED_MY_APP_ID_HERE'
+    });
+    picker.choosify(document.getElementById('chooser'));
+  </script>
+</body>
+
+</html>
